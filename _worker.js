@@ -1,5 +1,5 @@
 // @ts-nocheck
-// <!------- time is 15:25 UTC - Sunday, 12 May 2024 -------!>
+// <!---- time is 18:11 UTC - Monday, 27 May 2024  - NiREvil----!>
 // @ts-ignore
 // Many thanks to github.com/bia-pain-bache
 
@@ -793,16 +793,14 @@ const getNormalConfigs = async (env, hostName, client) => {
         let remark = ` | BpB | - ${addr}`;
         remark = remark.length <= 30 ? remark : `${remark.slice(0,29)}...`;
 
-        vlessWsTls += 'vless' + `://${userID}@${addr}:443?encryption=none&security=tls&type=ws&host=${
+        vlessWsTls += 'vless' + `://${userID}@${addr}:80?encryption=none&security=none&type=ws&host=${
             randomUpperCase(hostName)
-        }&sni=${
-            randomUpperCase(hostName)
-        }&fp=randomized&alpn=http/1.1&path=${
+        }&path=${
             encodeURIComponent(`/${getRandomPath(16)}${proxyIP ? `/${btoa(proxyIP)}` : ''}?ed=2560`)
         }#${encodeURIComponent(remark)}\n`;
     });
 
-    const subscription = client === 'singbox' ? btoa(vlessWsTls) : btoa(vlessWsTls.replaceAll('http/1.1', 'h2,http/1.1'));
+    const subscription = client === 'singbox' ? btoa(vlessWsTls) : btoa(vlessWsTls.replaceAll('http/1.1', 'http/1.1'));
     return subscription;
 }
 
@@ -1142,10 +1140,10 @@ const updateDataset = async (env, Settings) => {
     const proxySettings = {
         remoteDNS: Settings?.get('remoteDNS') || 'https://94.140.14.14/dns-query',
         localDNS: Settings?.get('localDNS') || '8.8.8.8',
-        lengthMin: Settings?.get('fragmentLengthMin') || '100',
-        lengthMax: Settings?.get('fragmentLengthMax') || '200',
-        intervalMin: Settings?.get('fragmentIntervalMin') || '5',
-        intervalMax: Settings?.get('fragmentIntervalMax') || '10',
+        lengthMin: Settings?.get('fragmentLengthMin') || '20',
+        lengthMax: Settings?.get('fragmentLengthMax') || '40',
+        intervalMin: Settings?.get('fragmentIntervalMin') || '10',
+        intervalMax: Settings?.get('fragmentIntervalMax') || '20',
         blockAds: Settings?.get('block-ads') || false,
         bypassIran: Settings?.get('bypass-iran') || false,
         blockPorn: Settings?.get('block-porn') || false,
