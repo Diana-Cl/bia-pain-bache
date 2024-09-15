@@ -1782,7 +1782,7 @@ async function renderHomePage (env, hostName, fragConfigs) {
                         Copy Script<span class="material-symbols-outlined">terminal</span>
                     </button>
                 </div>
-                <WARP PRO SETTINGS <span class="material-symbols-outlined">settings</span></h2>
+                <h2>WARP PRO SETTINGS <span class="material-symbols-outlined">settings</span></h2>
                 <div class="form-control">
 					<label for="hiddifyNoiseMode"><span class="material-symbols-outlined">elderly_woman</span> Hiddify mode</label>
 					<input type="text" id="hiddifyNoiseMode" name="hiddifyNoiseMode" 
