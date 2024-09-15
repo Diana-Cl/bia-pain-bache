@@ -1112,7 +1112,7 @@ async function handleUDPOutBound(webSocket, vlessResponseHeader, log) {
 
 function generateRemark(index, port, protocol, fragType) {
     let remark = '';
-    const type = fragType ? ' F' : '';
+    const type = fragType ? ' Fragmented' : '';
     switch (index) {
         case 0:
         case 1:
