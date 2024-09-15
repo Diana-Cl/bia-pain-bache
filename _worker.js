@@ -1190,8 +1190,8 @@ async function updateDataset (env, Settings) {
         trojanConfigs: Settings ? Settings.get('trojanConfigs') : currentProxySettings?.trojanConfigs || false,
         outProxy: Settings ? vlessConfig : currentProxySettings?.outProxy || '',
         outProxyParams: vlessConfig ? await extractVlessParams(vlessConfig) : currentProxySettings?.outProxyParams || '',
-        wowEndpoint: Settings ? Settings.get('wowEndpoint')?.replaceAll(' ', '') : currentProxySettings?.wowEndpoint || '188.114.98.1:864',
-        warpEndpoints: Settings ? Settings.get('warpEndpoints')?.replaceAll(' ', '') : currentProxySettings?.warpEndpoints || '162.159.192.100:1018',
+        wowEndpoint: Settings ? Settings.get('wowEndpoint')?.replaceAll(' ', '') : currentProxySettings?.wowEndpoint || '188.114.98.1:864', '188.114.98.1:1010',
+        warpEndpoints: Settings ? Settings.get('warpEndpoints')?.replaceAll(' ', '') : currentProxySettings?.warpEndpoints || '162.159.192.100:1018', '188.114.98.1:1010',
         hiddifyNoiseMode: Settings ? Settings.get('hiddifyNoiseMode') : currentProxySettings?.hiddifyNoiseMode || 'm4',
         nikaNGNoiseMode: Settings ? Settings.get('nikaNGNoiseMode') : currentProxySettings?.nikaNGNoiseMode || 'quic',
         noiseCountMin: Settings ? Settings.get('noiseCountMin') : currentProxySettings?.noiseCountMin || '10',
@@ -3898,11 +3898,11 @@ async function getClashConfig (env, hostName, isWarp) {
                 "name": "✅ Selector",
                 "type": "select",
                 "proxies": isWarp
-                    ? ['💦 Warp Best Ping 🚀', '💦 WoW Best Ping 🚀', ...warpOutboundsRemarks, ...wowOutboundRemarks ]
-                    : ['💦 Best Ping 💥', ...outboundsRemarks ]
+                    ? ['★ Warp Best Ping', '★ WoW Best Ping', ...warpOutboundsRemarks, ...wowOutboundRemarks ]
+                    : ['★ Best Ping', ...outboundsRemarks ]
             },
             {
-                "name": isWarp ? `💦 Warp Best Ping 🚀`: `💦 Best Ping 💥`,
+                "name": isWarp ? `★ Warp Best Ping`: `★ Best Ping`,
                 "type": "url-test",
                 "url": "https://www.gstatic.com/generate_204",
                 "interval": 30,
@@ -3914,7 +3914,7 @@ async function getClashConfig (env, hostName, isWarp) {
     };
 
     isWarp && config["proxy-groups"].push({
-        "name": "💦 WoW Best Ping 🚀",
+        "name": "★ WoW Best Ping",
         "type": "url-test",
         "url": "https://www.gstatic.com/generate_204",
         "interval": 30,
@@ -4247,15 +4247,15 @@ async function getSingboxConfig (env, hostName, client, warpType) {
         const WOWOutbounds = await buildWoWOutbounds(env, client, proxySettings, warpConfigs);
         config.dns.servers[0].address = '1.1.1.1';
         config.outbounds[0].outbounds = client === 'hiddify'
-            ? ["💦 Warp Pro Best Ping 🚀", "💦 WoW Pro Best Ping 🚀"]
-            : ["💦 Warp Best Ping 🚀", "💦 WoW Best Ping 🚀"];
+            ? ["🟢 Warp Pro Best Ping", "🟡 WoW Pro Best Ping"]
+            : ["🟢 Warp Best Ping", "🟡 WoW Best Ping"];
         config.outbounds.splice(2, 0, structuredClone(config.outbounds[1]));
         config.outbounds[1].tag = client === 'hiddify' 
-            ? "💦 Warp Pro Best Ping 🚀"
-            : "💦 Warp Best Ping 🚀";
+            ? "🟢 Warp Pro Best Ping"
+            : "🟢 Warp Best Ping";
         config.outbounds[2].tag = client === 'hiddify'
-            ? "💦 WoW Pro Best Ping 🚀"
-            : "💦 WoW Best Ping 🚀";
+            ? "🟡 WoW Pro Best Ping"
+            : "🟡 WoW Best Ping";
         config.outbounds.push(...warpOutbounds, ...WOWOutbounds);
         warpOutbounds.forEach(outbound => {
             config.outbounds[0].outbounds.push(outbound.tag);
@@ -4494,11 +4494,11 @@ const singboxConfigTemp = {
         {
             type: "selector",
             tag: "proxy",
-            outbounds: ["💦 Best Ping 💥"]
+            outbounds: ["★ Best Ping"]
         },
         {
             type: "urltest",
-            tag: "💦 Best Ping 💥",
+            tag: "★ Best Ping",
             outbounds: [],
             url: "https://www.gstatic.com/generate_204",
             interval: "30s",
