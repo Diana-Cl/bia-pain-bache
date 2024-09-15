@@ -1112,7 +1112,7 @@ async function handleUDPOutBound(webSocket, vlessResponseHeader, log) {
 
 function generateRemark(index, port, protocol, fragType) {
     let remark = '';
-    const type = fragType ? ' Fragmented' : '';
+    const type = fragType ? ' Frag' : '';
     switch (index) {
         case 0:
         case 1:
@@ -1633,30 +1633,30 @@ async function renderHomePage (env, hostName, fragConfigs) {
 	</head>
 	
 	<body>
-		<h1>BpB Panel <span style="font-size: smaller;">${panelVersion}</span> 👻</h2>
+		<h1>BpB Panel <span style="font-size: smaller;">${panelVersion}</span> 👻</h1>
 		<div class="form-container">
             <form id="configForm">
-                <h2>VLESS/TROJAN SETTINGS ⚙️</h2>
+                <h2>VLESS & TROJAN SETTINGS <span class="material-symbols-outlined">settings_applications</span> </h2>
 				<div class="form-control">
-					<label for="remoteDNS">🌏 Remote DNS</label>
+					<label for="remoteDNS"><span class="material-symbols-outlined">dynamic_form</span> Remote DNS</label>
 					<input type="url" id="remoteDNS" name="remoteDNS" value="${remoteDNS}" required>
 				</div>
 				<div class="form-control">
-					<label for="localDNS">🏚️ Local DNS</label>
+					<label for="localDNS"><span class="material-symbols-outlined">roofing</span> Local DNS</label>
 					<input type="text" id="localDNS" name="localDNS" value="${localDNS}"
 						pattern="^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)|localhost$"
 						title="Please enter a valid DNS IP Address or localhost!"  required>
 				</div>
 				<div class="form-control">
-					<label for="proxyIP">📍 Proxy IP</label>
+					<label for="proxyIP"><span class="material-symbols-outlined">fingerprint</span> IP or Domain</label>
 					<input type="text" id="proxyIP" name="proxyIP" value="${proxyIP}">
 				</div>
 				<div class="form-control">
-					<label for="cleanIPs">✨ Clean IPs</label>
+					<label for="cleanIPs"><span class="material-symbols-outlined">123</span> Clean IPs</label>
 					<input type="text" id="cleanIPs" name="cleanIPs" value="${cleanIPs.replaceAll(",", " , ")}">
 				</div>
                 <div class="form-control">
-                    <label>🔎 Online Scanner</label>
+                    <label><span class="material-symbols-outlined">search_insights</span> CF IP Scanner</label>
                     <a href="https://scanner.github1.cloud/" id="scanner" name="scanner" target="_blank">
                         <button type="button" class="button">
                             Scan now
@@ -1665,7 +1665,7 @@ async function renderHomePage (env, hostName, fragConfigs) {
                     </a>
                 </div>
                 <div class="form-control" style="padding-top: 10px;">
-					<label>⚙️ Protocols</label>
+					<label><span class="material-symbols-outlined">repartition</span> Protocols</label>
 					<div style="display: grid; grid-template-columns: 1fr 1fr; align-items: baseline; margin-top: 10px;">
                         <div style = "display: flex; justify-content: center; align-items: center;">
                             <input type="checkbox" id="vlessConfigs" name="vlessConfigs" onchange="handleProtocolChange(event)" style="margin: 0; grid-column: 2;" value="true" ${vlessConfigs ? 'checked' : ''}>
@@ -1693,13 +1693,13 @@ async function renderHomePage (env, hostName, fragConfigs) {
                         </tr>`}        
                     </table>
                 </div>
-                <h2>FRAGMENT SETTINGS ⚙️</h2>	
+                <h2>FRAGMENT SETTINGS <span class="material-symbols-outlined">settings_applications</span> </h2>	
 				<div class="form-control">
-					<label for="fragmentLengthMin">📐 Length</label>
+					<label for="fragmentLengthMin"><span class="material-symbols-outlined">perm_data_setting</span> Length</label>
 					<div style="display: grid; grid-template-columns: 1fr auto 1fr; align-items: baseline;">
 						<input type="number" id="fragmentLengthMin" name="fragmentLengthMin" value="${lengthMin}" min="10" required>
 						<span style="text-align: center; white-space: pre;"> - </span>
-						<input type="number" id="fragmentLengthMax" name="fragmentLengthMax" value="${lengthMax}" max="500" required>
+						<input type="number" id="fragmentLengthMax" name="fragmentLengthMax" value="${lengthMax}" max="7000" required>
 					</div>
 				</div>
 				<div class="form-control">
