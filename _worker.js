@@ -1416,7 +1416,7 @@ async function renderHomePage (env, hostName, fragConfigs) {
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>BpB Panel ${panelVersion}</title>
+        <title>BpB panel ${panelVersion}</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 		<style>
@@ -1633,7 +1633,7 @@ async function renderHomePage (env, hostName, fragConfigs) {
 	</head>
 	
 	<body>
-		<h1>BpB Panel <span style="font-size: smaller;">${panelVersion}</span> 👻</h2>
+		<h1>BpB panel <span style="font-size: smaller;">${panelVersion}</span> 👻</h2>
 		<div class="form-container">
             <form id="configForm">
                 <h2>VLESS & TROJAN SETTINGS <span class="material-symbols-outlined">settings</span> </h2>
@@ -1665,7 +1665,7 @@ async function renderHomePage (env, hostName, fragConfigs) {
                     </a>
                 </div>
                 <div class="form-control" style="padding-top: 10px;">
-					<label><span class="material-symbols-outlined">repartition</span> Protocols</label>
+					<label><span class="material-symbols-outlined">memory</span> Protocols</label>
 					<div style="display: grid; grid-template-columns: 1fr 1fr; align-items: baseline; margin-top: 10px;">
                         <div style = "display: flex; justify-content: center; align-items: center;">
                             <input type="checkbox" id="vlessConfigs" name="vlessConfigs" onchange="handleProtocolChange(event)" style="margin: 0; grid-column: 2;" value="true" ${vlessConfigs ? 'checked' : ''}>
@@ -1757,7 +1757,7 @@ async function renderHomePage (env, hostName, fragConfigs) {
 				</div>
                 <h2>WARP SETTINGS <span class="material-symbols-outlined">settings</span></h2>
 				<div class="form-control">
-                    <label for="wowEndpoint"><span class="material-symbols-outlined">route</span> WoW Endpoints</label>
+                    <label for="wowEndpoint"><span class="material-symbols-outlined">repartition</span> WoW Endpoints</label>
                     <input type="text" id="wowEndpoint" name="wowEndpoint" value="${wowEndpoint.replaceAll(",", " , ")}" required>
 				</div>
 				<div class="form-control">
@@ -1834,7 +1834,7 @@ async function renderHomePage (env, hostName, fragConfigs) {
 				</div>
 			</form>
             <hr>            
-			<h2>NORMAL CONFIGS <span class="material-symbols-outlined">code</span></h2>
+			<h2>NORMAL SUB <span class="material-symbols-outlined">code</span></h2>
 			<div class="table-container">
 				<table id="normal-configs-table">
 					<tr>
