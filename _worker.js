@@ -1190,8 +1190,8 @@ async function updateDataset (env, Settings) {
         trojanConfigs: Settings ? Settings.get('trojanConfigs') : currentProxySettings?.trojanConfigs || false,
         outProxy: Settings ? vlessConfig : currentProxySettings?.outProxy || '',
         outProxyParams: vlessConfig ? await extractVlessParams(vlessConfig) : currentProxySettings?.outProxyParams || '',
-        wowEndpoint: Settings ? Settings.get('wowEndpoint')?.replaceAll(' ', '') : currentProxySettings?.wowEndpoint || '188.114.98.1:864', '188.114.98.1:1010',
-        warpEndpoints: Settings ? Settings.get('warpEndpoints')?.replaceAll(' ', '') : currentProxySettings?.warpEndpoints || '162.159.192.100:1018', '188.114.98.1:1010',
+        wowEndpoint: Settings ? Settings.get('wowEndpoint')?.replaceAll(' ', '') : currentProxySettings?.wowEndpoint || '188.114.98.1:1010',
+        warpEndpoints: Settings ? Settings.get('warpEndpoints')?.replaceAll(' ', '') : currentProxySettings?.warpEndpoints || '162.159.192.100:1018',
         hiddifyNoiseMode: Settings ? Settings.get('hiddifyNoiseMode') : currentProxySettings?.hiddifyNoiseMode || 'm4',
         nikaNGNoiseMode: Settings ? Settings.get('nikaNGNoiseMode') : currentProxySettings?.nikaNGNoiseMode || 'quic',
         noiseCountMin: Settings ? Settings.get('noiseCountMin') : currentProxySettings?.noiseCountMin || '10',
@@ -1673,7 +1673,7 @@ async function renderHomePage (env, hostName, fragConfigs) {
                         </div>
                         <div style = "display: flex; justify-content: center; align-items: center;">
                             <input type="checkbox" id="trojanConfigs" name="trojanConfigs" onchange="handleProtocolChange(event)" style="margin: 0; grid-column: 2;" value="true" ${trojanConfigs ? 'checked' : ''}>
-                            <label for="trojanConfigs" style="margin: 0 5px; font-weight: normal; font-size: unset;">Trojan</label>
+                            <label for="trojanConfigs" style="margin: 0 5px; font-weight: normal; font-size: unset;">TROJAN</label>
                         </div>
 					</div>
 				</div>
@@ -1834,7 +1834,7 @@ async function renderHomePage (env, hostName, fragConfigs) {
 				</div>
 			</form>
             <hr>            
-			<h2>NORMAL CONFIGS <span class="material-symbols-outlined">code</span></h2>
+			<h2>NORMAL CONFIGS <span class="material-symbols-outlined">data_object</span></h2>
 			<div class="table-container">
 				<table id="normal-configs-table">
 					<tr>
@@ -1885,7 +1885,7 @@ async function renderHomePage (env, hostName, fragConfigs) {
                                 QR Code&nbsp;<span class="material-symbols-outlined">qr_code_2</span>
                             </button>
                             <button onclick="copyToClipboard('https://${hostName}/sub/${userID}#BPB-Normal', false)">
-                                Copy Sub<span class="material-symbols-outlined">abc</span>
+                                Copy Sub<span class="material-symbols-outlined">texture_minus</span>
                             </button>
                         </td>
 					</tr>
