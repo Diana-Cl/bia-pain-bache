@@ -48,23 +48,25 @@ HUGE THANKS TO
 
 1. **Free**: No cost involved.
 2. **User-Friendly Panel:** Designed for easy navigation, configuration and usage.
-3. **Support Fragment:** Provides support for fragment functionality.
-4. **Block Ads. and Porn (Optional)**
+3. **Protocols:** Provides VLESS, Trojan and Wireguard (Warp) protocols.
+4. **Warp Pro configs:** Optimized Warp for crucial circumstances.
+5. **Support Fragment:** Supports Fragment functionality for crucial network situations.
+6. **Full routing rules:** Bypassing Iran/China and LAN, Blocking QUIC, Porn, Ads, Malwares, Phishing...
 5. **Bypass Iran and LAN (Optional)**
 6. **Full routing rules:** Bypassing Iran, Blocking Ads, Malwares, Phishing... for Sing-box.
 7. **Chain Proxy:** Capable of adding a chain proxy to fix IP.
-8. **Supports Wide Range of Clients:** Offers subscription links for Xray and Sing-box core clients.
-9. **Subscription Link (JSON):** Provides subscription link for JSON configs.
-10. **Password-Protected Panel:** Secure your panel with password protection.
-11. **Custom Cloudflare Clean IP:** Ability to use online scanner and setting up clean IP-domains.
-12. **Warp configs:** Provides Warp and Warp on Warp subscription.
-13. **Warp Pro configs:** Optimized Warp for crucial circumstances.
+8. **Supports Wide Range of Clients:** Offers subscription links for Xray, Sing-box and Clash core clients.
+10. **Subscription Link (JSON):** Provides subscription link for JSON configs.
+11. **Password-Protected Panel:** Secure your panel with password protection.
+12. **Fully customizable:** Ability to use online scanner and setting up clean IP-domains, Proxy IP, setting DNS servers, choosing ports and protocols, Warp endpoints...
 <br>
 
 ## How to use:
 - [Installation (Pages)](docs/pages_installation_fa.md)
 
 - [Installation (Worker)](docs/worker_installation_fa.md)
+
+- [Scanning Proxy IP](docs/proxy-ip-scanner.md))
 
 - [How to use](docs/configuration_fa.md)
 
@@ -86,6 +88,9 @@ HUGE THANKS TO
 | **Nekoray**  |   | :heavy_check_mark: | :x: |
 | **Hiddify**  | 2.0.5 or higher  | :x: | :heavy_check_mark: |
 | **NikaNG**  |   | :heavy_check_mark: | :heavy_check_mark: |
+| **Clash Meta**  |   | :x: | :x: |
+| **Clash Verge Rev**  |   | :x: | :x: |
+| **FLClash**  |   | :x: | :x: |
 
 
 ---
