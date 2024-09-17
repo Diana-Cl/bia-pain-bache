@@ -1373,11 +1373,11 @@ async function renderHomePage (env, hostName, fragConfigs) {
             <tr>
                 <td>
                     ${config.address === 'Best-Ping' 
-                        ? `<div  style="justify-content: center;"><span class="material-symbols-outlined">speed</span><span>&nbsp;<b> Best Fragment Ping </b></span></div>` 
+                        ? `<div  style="justify-content: center;"><span class="material-symbols-outlined">speed</span><span>&nbsp;<b> Fragment Best Ping </b></span></div>` 
                         : config.address === 'WorkerLess'
                             ? `<div  style="justify-content: center;"><span class="material-symbols-outlined">cloud</span><span>&nbsp;<b> WorkerLess Config </b></span></div>`
                             : config.address === 'Best-Fragment'
-                                ? `<div  style="justify-content: center;"><span class="material-symbols-outlined">hotel_class</span><span>&nbsp;<b> Best Fragment Values </b></span></div>`
+                                ? `<div  style="justify-content: center;"><span class="material-symbols-outlined">hotel_class</span><span>&nbsp;<b> Fragment Best Values </b></span></div>`
                                 : config.address
                     }
                 </td>
@@ -2817,7 +2817,7 @@ async function buildWarpOutbounds (env, client, proxySettings, warpConfigs) {
 
         if (client === 'singbox' || client === 'hiddify') {
             let singboxOutbound = buildSingboxWarpOutbound(
-                client === 'hiddify' ? `⛄ Warp Pro ${index + 1} ` : `⛄ Warp ${index + 1} `, 
+                client === 'hiddify' ? `🔴 Warp Pro ${index + 1} ` : `🟠 Warp ${index + 1} `, 
                 warpIPv6, 
                 privateKey, 
                 publicKey, 
@@ -2837,7 +2837,7 @@ async function buildWarpOutbounds (env, client, proxySettings, warpConfigs) {
         }
 
         if (client === 'clash') {
-            let clashOutbound = buildClashWarpOutbound(`⛄ Warp ${index + 1} `, warpIPv6, privateKey, publicKey, endpoint, reserved, '');
+            let clashOutbound = buildClashWarpOutbound(`🔴 Warp ${index + 1} `, warpIPv6, privateKey, publicKey, endpoint, reserved, '');
             warpOutbounds.push(clashOutbound);
         }
 
@@ -2896,8 +2896,8 @@ async function buildWoWOutbounds (env, client, proxySettings, warpConfigs) {
                     i === 1
                     ? `warp-ir_${index + 1}` 
                     : client === 'hiddify' 
-                        ? `☔ WoW Pro ${index + 1}` 
-                        : `☂ WoW ${index + 1} ` , 
+                        ? `🟢 WoW Pro ${index + 1}` 
+                        : `🔵 WoW ${index + 1} ` , 
                     warpIPv6, 
                     privateKey, 
                     publicKey, 
@@ -2918,7 +2918,7 @@ async function buildWoWOutbounds (env, client, proxySettings, warpConfigs) {
 
             if (client === 'clash') {
                 let clashOutbound = buildClashWarpOutbound(
-                    i === 1 ? `warp-ir_${index + 1}` : `⛄ WoW ${index + 1} `, 
+                    i === 1 ? `warp-ir_${index + 1}` : `🔵 WoW ${index + 1} `, 
                     warpIPv6, 
                     privateKey, 
                     publicKey, 
@@ -3539,7 +3539,7 @@ async function getFragmentConfigs(env, hostName, client) {
     }
 
     let bestPing = structuredClone(xrayConfigTemp);
-    bestPing.remarks = '☆ Best Fragment Ping';
+    bestPing.remarks = '☆ Fragment Best Ping';
     bestPing.dns = await buildXrayDNSObject(remoteDNS, localDNS, blockAds, bypassIran, bypassChina, blockPorn, false);
     bestPing.outbounds[0].settings.fragment.length = `${lengthMin}-${lengthMax}`;
     bestPing.outbounds[0].settings.fragment.interval = `${intervalMin}-${intervalMax}`;
@@ -3561,7 +3561,7 @@ async function getFragmentConfigs(env, hostName, client) {
     }
 
     let bestFragment = structuredClone(xrayConfigTemp);
-    bestFragment.remarks = '★ Best Fragment Values';
+    bestFragment.remarks = '★ Fragment Best Values';
     bestFragment.dns = await buildXrayDNSObject(remoteDNS, localDNS, blockAds, bypassIran, bypassChina, blockPorn, false);
     bestFragment.outbounds.splice(0,1);
     bestFragValues.forEach( (fragLength, index) => {
@@ -3643,7 +3643,7 @@ async function getXrayWarpConfigs (env, client) {
     xrayWarpConfig.routing.rules[xrayWarpConfig.routing.rules.length - 1].outboundTag = 'warp';
     delete xrayWarpConfig.observatory;
     delete xrayWarpConfig.routing.balancers;
-    xrayWarpBestPing.remarks = client === 'nikang' ? '💦 BPB - Warp Pro Best Ping 🚀' : '💦 BPB - Warp Best Ping 🚀';
+    xrayWarpBestPing.remarks = client === 'nikang' ? '🔵 Warp Pro Best Ping' : '🟢 Warp Best Ping';
     xrayWarpBestPing.dns = await buildXrayDNSObject('1.1.1.1', localDNS, blockAds, bypassIran, bypassChina, blockPorn, false);
     xrayWarpBestPing.routing.rules = buildXrayRoutingRules(localDNS, blockAds, bypassIran, blockPorn, bypassLAN, bypassChina, blockUDP443, false, true);
     xrayWarpBestPing.outbounds.splice(0,1);
@@ -3658,7 +3658,7 @@ async function getXrayWarpConfigs (env, client) {
     xrayWarpOutbounds.forEach((outbound, index) => {
         xrayWarpConfigs.push({
             ...xrayWarpConfig,
-            remarks: client === 'nikang' ? `💦 BPB - Warp Pro ${index + 1} 🇮🇷` : `💦 BPB - Warp ${index + 1} 🇮🇷`,
+            remarks: client === 'nikang' ? `🔵 Warp Pro ${index + 1} ` : `🟢 Warp ${index + 1} `,
             outbounds: [{...outbound, tag: 'warp'}, ...xrayWarpConfig.outbounds]
         });
     });
@@ -3666,7 +3666,7 @@ async function getXrayWarpConfigs (env, client) {
     xrayWoWOutbounds.forEach((outbound, index) => {
         if (outbound.tag.includes('warp-out')) {
             let xrayWoWConfig = structuredClone(xrayWoWConfigTemp);
-            xrayWoWConfig.remarks = client === 'nikang' ? `💦 BPB - WoW Pro ${index/2 + 1} 🌍` : `💦 BPB - WoW ${index/2 + 1} 🌍`;
+            xrayWoWConfig.remarks = client === 'nikang' ? `🔴 WoW Pro ${index/2 + 1} ` : `🟠 WoW ${index/2 + 1} `;
             xrayWoWConfig.outbounds = [{...xrayWoWOutbounds[index]}, {...xrayWoWOutbounds[index + 1]}, ...xrayWoWConfig.outbounds];
             xrayWoWConfig.routing.rules[xrayWoWConfig.routing.rules.length - 1].outboundTag = outbound.tag;
             xrayWarpConfigs.push(xrayWoWConfig);
@@ -3674,7 +3674,7 @@ async function getXrayWarpConfigs (env, client) {
     });
 
     let xrayWoWBestPing = structuredClone(xrayWarpBestPing);
-    xrayWoWBestPing.remarks = client === 'nikang' ? '💦 BPB - WoW Pro Best Ping 🚀' : '💦 BPB - WoW Best Ping 🚀';
+    xrayWoWBestPing.remarks = client === 'nikang' ? '🔴 WoW Pro Best Ping' : '🟠 WoW Best Ping';
     xrayWoWBestPing.routing.balancers[0].selector = ['warp-out'];
     xrayWoWBestPing.observatory.subjectSelector = ['warp-out'];
     xrayWarpBestPing.outbounds = [...xrayWarpOutbounds, ...xrayWarpBestPing.outbounds];
@@ -3896,14 +3896,14 @@ async function getClashConfig (env, hostName, isWarp) {
         "proxies": outbounds,
         "proxy-groups": [
             {
-                "name": "✅ Selector",
+                "name": "★ Selector",
                 "type": "select",
                 "proxies": isWarp
-                    ? ['★ Warp Best Ping', '★ WoW Best Ping', ...warpOutboundsRemarks, ...wowOutboundRemarks ]
-                    : ['★ Best Ping', ...outboundsRemarks ]
+                    ? ['🟠 Warp Best Ping', '🔵 WoW Best Ping', ...warpOutboundsRemarks, ...wowOutboundRemarks ]
+                    : ['🔴 Best Ping', ...outboundsRemarks ]
             },
             {
-                "name": isWarp ? `★ Warp Best Ping`: `★ Best Ping`,
+                "name": isWarp ? `🟠 Warp Best Ping`: `🔴 Best Ping`,
                 "type": "url-test",
                 "url": "https://www.gstatic.com/generate_204",
                 "interval": 30,
@@ -3911,11 +3911,11 @@ async function getClashConfig (env, hostName, isWarp) {
                 "proxies": isWarp ? warpOutboundsRemarks : outboundsRemarks
             }
         ],
-        "rules": [...rules, 'MATCH,✅ Selector']
+        "rules": [...rules, 'MATCH,★ Selector']
     };
 
     isWarp && config["proxy-groups"].push({
-        "name": "★ WoW Best Ping",
+        "name": "🔵 WoW Best Ping",
         "type": "url-test",
         "url": "https://www.gstatic.com/generate_204",
         "interval": 30,
@@ -4248,15 +4248,15 @@ async function getSingboxConfig (env, hostName, client, warpType) {
         const WOWOutbounds = await buildWoWOutbounds(env, client, proxySettings, warpConfigs);
         config.dns.servers[0].address = '1.1.1.1';
         config.outbounds[0].outbounds = client === 'hiddify'
-            ? ["🟢 Warp Pro Best Ping", "🟡 WoW Pro Best Ping"]
-            : ["🟢 Warp Best Ping", "🟡 WoW Best Ping"];
+            ? ["🔴 Warp Pro Best Ping", "🟢 WoW Pro Best Ping"]
+            : ["🟠 Warp Best Ping", "🔵 WoW Best Ping"];
         config.outbounds.splice(2, 0, structuredClone(config.outbounds[1]));
         config.outbounds[1].tag = client === 'hiddify' 
-            ? "🟢 Warp Pro Best Ping"
-            : "🟢 Warp Best Ping";
+            ? "🔴 Warp Pro Best Ping"
+            : "🟠 Warp Best Ping";
         config.outbounds[2].tag = client === 'hiddify'
-            ? "🟡 WoW Pro Best Ping"
-            : "🟡 WoW Best Ping";
+            ? "🟢 WoW Pro Best Ping"
+            : "🔵 WoW Best Ping";
         config.outbounds.push(...warpOutbounds, ...WOWOutbounds);
         warpOutbounds.forEach(outbound => {
             config.outbounds[0].outbounds.push(outbound.tag);
@@ -4495,11 +4495,11 @@ const singboxConfigTemp = {
         {
             type: "selector",
             tag: "proxy",
-            outbounds: ["★ Best Ping"]
+            outbounds: ["🔴 Best Ping"]
         },
         {
             type: "urltest",
-            tag: "★ Best Ping",
+            tag: "🔴 Best Ping",
             outbounds: [],
             url: "https://www.gstatic.com/generate_204",
             interval: "30s",
