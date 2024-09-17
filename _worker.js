@@ -1,6 +1,6 @@
 /**
 * @ts-nocheck   <!--GAMFC-->version base on commit 43fad05dcdae3b723c53c226f8181fc5bd47223e, time is 2023-06-22 15:20:02 UTC<!--GAMFC-END-->.
-* Last Update: 4:20 UTC - Saturday, 15 September 2024, By @Sahar-KM & @Diana-Cl
+* Last Update: 4:20 UTC - Tuesday, 17 September 2024, By @Sahar-KM , @Diana-Cl & Nesa
 * Many thanks to github.com/bia-pain-bache
 */
 import { connect } from 'cloudflare:sockets';
@@ -9,16 +9,16 @@ import { connect } from 'cloudflare:sockets';
 let userID = '89b3cbba-e6ac-485a-9481-976a0415eab9';
 
 //Find proxyIP : https://github.com/NiREvil/vless/blob/main/sub/ProxyIP.md
-//Find proxyIP : https://www.nslookup.io/domains/bpb.yousef.isegaro.com/dns-records/
-const proxyIPs= ['bpb.radically.pro']; // OR use ['ni.radically.pro', 'de.radically.pro', 'bpb.yousef.isegaro.com', 'proxyip.digitalocean.hw.090227.xyz'];
+//Find proxyIP : https://www.nslookup.io/domains/ipdb.rr.nu/dns-records/
+const proxyIPs= ['bpb.radically.pro']; // OR use ['bpb.radically.pro', 'turk.radicalization.ir', 'bpb.yousef.isegaro.com', 'proxyip.digitalocean.hw.090227.xyz'];
 const defaultHttpPorts = ['80', '8080', '2052', '2082', '2086', '2095', '8880'];
 const defaultHttpsPorts = ['443', '8443', '2053', '2083', '2087', '2096'];
 let proxyIP = proxyIPs[Math.floor(Math.random() * proxyIPs.length)];
 let dohURL = 'https://cloudflare-dns.com/dns-query';
-let trojanPassword = `bpb-trojan`;
+let trojanPassword = `NiREvil`;
 // https://emn178.github.io/online-tools/sha224.html
 // https://www.atatus.com/tools/sha224-to-hash
-let hashPassword = 'b5d0a5f7ff7aac227bc68b55ae713131ffdf605ca0da52cce182d513';
+let hashPassword = 'a824e0acad66f6fde67a3f1f8bd5c2b11c7bc2ab94eed98e2b83c712';
 let panelVersion = 'v2.5.5';
 
 if (!isValidUUID(userID)) {
