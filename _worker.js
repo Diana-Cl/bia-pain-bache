@@ -2288,7 +2288,7 @@ async function renderHomePage (env, hostName, fragConfigs) {
             try {
                 document.body.style.cursor = 'wait';
                 const refreshButtonVal = refreshBtn.innerHTML;
-                refreshBtn.innerHTML = 'Don’t go anywhere, I'm on it!';
+                refreshBtn.innerHTML = '⌛ Loading...';
 
                 const response = await fetch('/warp-keys', {
                     method: 'POST',
@@ -2450,7 +2450,7 @@ async function renderHomePage (env, hostName, fragConfigs) {
             try {
                 document.body.style.cursor = 'wait';
                 const applyButtonVal = applyButton.value;
-                applyButton.value = 'I'm on it!';
+                applyButton.value = 'Don’t go anywhere, I'm on it!';
 
                 const response = await fetch('/panel', {
                     method: 'POST',
