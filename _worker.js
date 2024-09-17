@@ -2450,7 +2450,7 @@ async function renderHomePage (env, hostName, fragConfigs) {
             try {
                 document.body.style.cursor = 'wait';
                 const applyButtonVal = applyButton.value;
-                applyButton.value = 'Don’t go anywhere, I'm on it!';
+                applyButton.value = 'Don’t go anywhere, I'm on it';
 
                 const response = await fetch('/panel', {
                     method: 'POST',
@@ -2462,7 +2462,7 @@ async function renderHomePage (env, hostName, fragConfigs) {
                 applyButton.value = applyButtonVal;
 
                 if (response.ok) {
-                    alert('Signed, sealed, delivered!');
+                    alert('Signed, sealed, delivered');
                     window.location.reload(true);
                 } else {
                     const errorMessage = await response.text();
