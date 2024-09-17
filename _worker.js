@@ -2288,7 +2288,7 @@ async function renderHomePage (env, hostName, fragConfigs) {
             try {
                 document.body.style.cursor = 'wait';
                 const refreshButtonVal = refreshBtn.innerHTML;
-                refreshBtn.innerHTML = '⌛ Loading...';
+                refreshBtn.innerHTML = 'Dont go anywhere. im on it';
 
                 const response = await fetch('/warp-keys', {
                     method: 'POST',
@@ -2385,7 +2385,7 @@ async function renderHomePage (env, hostName, fragConfigs) {
 			textarea.select();
 			document.execCommand('copy');
 			document.body.removeChild(textarea);
-			alert('📋 Copied to clipboard:\\n\\n' +  value);
+			alert('📋 Copied and ready to paste:\\n\\n' +  value);
 		}
 
         const applySettings = async (event, configForm) => {
@@ -2450,7 +2450,7 @@ async function renderHomePage (env, hostName, fragConfigs) {
             try {
                 document.body.style.cursor = 'wait';
                 const applyButtonVal = applyButton.value;
-                applyButton.value = 'Don’t go anywhere, I'm on it';
+                applyButton.value = 'Dont go anywhere. Im on it';
 
                 const response = await fetch('/panel', {
                     method: 'POST',
@@ -2462,7 +2462,7 @@ async function renderHomePage (env, hostName, fragConfigs) {
                 applyButton.value = applyButtonVal;
 
                 if (response.ok) {
-                    alert('Signed, sealed, delivered');
+                    alert('Signed sealed and Delivered');
                     window.location.reload(true);
                 } else {
                     const errorMessage = await response.text();
