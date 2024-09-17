@@ -2450,7 +2450,7 @@ async function renderHomePage (env, hostName, fragConfigs) {
             try {
                 document.body.style.cursor = 'wait';
                 const applyButtonVal = applyButton.value;
-                applyButton.value = 'Don’t go anywhere, I'm on it!';
+                applyButton.value = '⌛ Loading...';
 
                 const response = await fetch('/panel', {
                     method: 'POST',
@@ -2817,7 +2817,7 @@ async function buildWarpOutbounds (env, client, proxySettings, warpConfigs) {
 
         if (client === 'singbox' || client === 'hiddify') {
             let singboxOutbound = buildSingboxWarpOutbound(
-                client === 'hiddify' ? `☔ Warp Pro ${index + 1} ` : `⛄ Warp ${index + 1} `, 
+                client === 'hiddify' ? `⛄ Warp Pro ${index + 1} ` : `⛄ Warp ${index + 1} `, 
                 warpIPv6, 
                 privateKey, 
                 publicKey, 
@@ -2897,7 +2897,7 @@ async function buildWoWOutbounds (env, client, proxySettings, warpConfigs) {
                     ? `warp-ir_${index + 1}` 
                     : client === 'hiddify' 
                         ? `☔ WoW Pro ${index + 1}` 
-                        : `⛄ WoW ${index + 1} ` , 
+                        : `☂ WoW ${index + 1} ` , 
                     warpIPv6, 
                     privateKey, 
                     publicKey, 
