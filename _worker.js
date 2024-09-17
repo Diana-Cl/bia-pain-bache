@@ -1956,7 +1956,7 @@ async function renderHomePage (env, hostName, fragConfigs) {
                     </tr>
 				</table>
 			</div>
-			<h2>FRAGMENT SUB ⛓️</h2>
+			<h2>FRAGMENT SUB <span class="material-symbols-outlined">link</span></h2>
 			<div class="table-container">
                 <table id="frag-sub-table">
                     <tr>
@@ -2001,7 +2001,7 @@ async function renderHomePage (env, hostName, fragConfigs) {
                     </tr>
                 </table>
             </div>
-            <h2>WARP SUB 🔗</h2>
+            <h2>WARP SUB <span class="material-symbols-outlined">link</span></h2>
 			<div class="table-container">
 				<table id="normal-configs-table">
 					<tr>
@@ -2082,7 +2082,7 @@ async function renderHomePage (env, hostName, fragConfigs) {
                     </tr>
 				</table>
 			</div>
-            <h2>WARP PRO SUB 🔗</h2>
+            <h2>WARP PRO SUB <span class="material-symbols-outlined">link</span></h2>
 			<div class="table-container">
 				<table id="warp-pro-configs-table">
 					<tr>
@@ -2131,7 +2131,7 @@ async function renderHomePage (env, hostName, fragConfigs) {
 					</tr>
 				</table>
 			</div>
-            <h2>FRAGMENT - NEKORAY ⛓️</h2>
+            <h2>FRAGMENT - NEKORAY <span class="material-symbols-outlined">code</span></h2>
             <div class="table-container">
 				<table id="custom-configs-table">
 					<tr style="text-wrap: nowrap;">
@@ -2171,7 +2171,7 @@ async function renderHomePage (env, hostName, fragConfigs) {
             <hr>
             <div class="footer">
                 <i class="fa fa-github" style="font-size:36px; margin-right: 10px;"></i>
-                <a class="link" href="https://github.com/bia-pain-bache/BPB-Worker-Panel" target="_blank">Github</a>
+                <a class="link" href="https://github.com/NiREvil/bia-pain-bache" target="_blank">Github</a>
                 <button id="openModalBtn" class="button">Change Password</button>
                 <button type="button" id="logout" style="background: none; margin: 0; border: none; cursor: pointer;">
                     <i class="fa fa-power-off fa-2x" aria-hidden="true"></i>
@@ -2288,7 +2288,7 @@ async function renderHomePage (env, hostName, fragConfigs) {
             try {
                 document.body.style.cursor = 'wait';
                 const refreshButtonVal = refreshBtn.innerHTML;
-                refreshBtn.innerHTML = '⌛ Loading...';
+                refreshBtn.innerHTML = 'Don’t go anywhere, I'm on it!';
 
                 const response = await fetch('/warp-keys', {
                     method: 'POST',
@@ -2302,11 +2302,11 @@ async function renderHomePage (env, hostName, fragConfigs) {
                 document.body.style.cursor = 'default';
                 refreshBtn.innerHTML = refreshButtonVal;
                 if (response.ok) {
-                    ${isWarpPlus} ? alert('Warp configs upgraded to PLUS successfully! 😎') : alert('Warp configs updated successfully! 😎');
+                    ${isWarpPlus} ? alert('Warp configs upgraded to PLUS successfully ✔') : alert('Warp configs updated successfully ✔');
                 } else {
                     const errorMessage = await response.text();
                     console.error(errorMessage, response.status);
-                    alert('⚠️ An error occured, Please try again!\\n⛔ ' + errorMessage);
+                    alert('⚠️ An error occured, Please try again!\\n❌ ' + errorMessage);
                 }         
             } catch (error) {
                 console.error('Error:', error);
@@ -2326,7 +2326,7 @@ async function renderHomePage (env, hostName, fragConfigs) {
             if (activePortsNo === 0) {
                 event.preventDefault();
                 event.target.checked = !event.target.checked;
-                alert("⛔ At least one port should be selected! 🫤");
+                alert("❌ At least one port should be selected! ❌");
                 activePortsNo = 1;
                 defaultHttpsPorts.includes(event.target.name) && activeHttpsPortsNo++;
                 return false;
@@ -2335,7 +2335,7 @@ async function renderHomePage (env, hostName, fragConfigs) {
             if (activeHttpsPortsNo === 0) {
                 event.preventDefault();
                 event.target.checked = !event.target.checked;
-                alert("⛔ At least one TLS(https) port should be selected! 🫤");
+                alert("❌ At least one TLS(https) port should be selected! ❌");
                 activeHttpsPortsNo = 1;
                 return false;
             }
@@ -2352,7 +2352,7 @@ async function renderHomePage (env, hostName, fragConfigs) {
             if (activeProtocols === 0) {
                 event.preventDefault();
                 event.target.checked = !event.target.checked;
-                alert("⛔ At least one Protocol should be selected! 🫤");
+                alert("⛔ At least one Protocol should be selected!");
                 activeProtocols = 1;
                 return false;
             }
@@ -2385,7 +2385,7 @@ async function renderHomePage (env, hostName, fragConfigs) {
 			textarea.select();
 			document.execCommand('copy');
 			document.body.removeChild(textarea);
-			alert('📋 Copied to clipboard:\\n\\n' +  value);
+			alert('📋 Copied and ready to paste:\\n\\n' +  value);
 		}
 
         const applySettings = async (event, configForm) => {
@@ -2428,29 +2428,29 @@ async function renderHomePage (env, hostName, fragConfigs) {
             });
     
             if (invalidIPs.length) {
-                alert('⛔ Invalid IPs or Domains 🫤\\n\\n' + invalidIPs.map(ip => '⚠️ ' + ip).join('\\n'));
+                alert('⚠️ Invalid IPs or Domains ⚠️\\n\\n' + invalidIPs.map(ip => '❌ ' + ip).join('\\n'));
                 return false;
             }
             
             if (invalidEndpoints.length) {
-                alert('⛔ Invalid endpoint 🫤\\n\\n' + invalidEndpoints.map(endpoint => '⚠️ ' + endpoint).join('\\n'));
+                alert('⚠️ Invalid endpoint ⚠️\\n\\n' + invalidEndpoints.map(endpoint => '❌ ' + endpoint).join('\\n'));
                 return false;
             }
 
             if (lengthMin >= lengthMax || intervalMin > intervalMax) {
-                alert('⛔ Minimum should be smaller or equal to Maximum! 🫤');               
+                alert('⚠️ Minimum should be smaller or equal to Maximum! ⚠️');               
                 return false;
             }
 
             if (!(isVless && (hasSecurity && validSecurityType || !hasSecurity) && validTransmission) && chainProxy) {
-                alert('⛔ Invalid Config! 🫤 \\n - The chain proxy should be VLESS!\\n - Transmission should be GRPC,WS or TCP\\n - Security should be TLS,Reality or None');               
+                alert('⚠️ Invalid Config! ⚠️ \\n - The chain proxy should be VLESS!\\n - Transmission should be GRPC,WS or TCP\\n - Security should be TLS,Reality or None');               
                 return false;
             }
 
             try {
                 document.body.style.cursor = 'wait';
                 const applyButtonVal = applyButton.value;
-                applyButton.value = '⌛ Loading...';
+                applyButton.value = 'Don’t go anywhere, I'm on it!';
 
                 const response = await fetch('/panel', {
                     method: 'POST',
@@ -2462,7 +2462,7 @@ async function renderHomePage (env, hostName, fragConfigs) {
                 applyButton.value = applyButtonVal;
 
                 if (response.ok) {
-                    alert('Parameters applied successfully 😎');
+                    alert('Signed, sealed, delivered!');
                     window.location.reload(true);
                 } else {
                     const errorMessage = await response.text();
@@ -2530,7 +2530,7 @@ async function renderHomePage (env, hostName, fragConfigs) {
                 if (response.ok) {
                     modal.style.display = "none";
                     document.body.style.overflow = "";
-                    alert("Password changed successfully! 👍");
+                    alert("Password changed successfully");
                     window.location.href = '/login';
                 } else if (response.status === 401) {
                     const errorMessage = await response.text();
@@ -2626,7 +2626,7 @@ async function renderLoginPage () {
     </head>
     <body>
         <div class="container">
-            <h1>BPB Panel <span style="font-size: smaller;">${panelVersion}</span> 💦</h1>
+            <h1>BPB panel <span style="font-size: smaller;">${panelVersion}</span> 👻</h1>
             <div class="form-container">
                 <h2>User Login</h2>
                 <form id="loginForm">
@@ -2697,10 +2697,10 @@ function renderErrorPage (message, error, refer) {
 
     <body>
         <div id="error-container">
-            <h1>BPB Panel <span style="font-size: smaller;">${panelVersion}</span> 💦</h1>
+            <h1>BPB panel <span style="font-size: smaller;">${panelVersion}</span> 👻</h2>
             <div id="error-message">
                 <h2>${message} ${refer 
-                    ? 'Please try again or refer to <a href="https://github.com/bia-pain-bache/BPB-Worker-Panel/blob/main/README.md">documents</a>' 
+                    ? 'Please try again or refer to <a href="https://github.com/NiREvil/bia-pain-bache/blob/main/README.md">documents</a>' 
                     : ''}
                 </h2>
                 <p><b>${error ? `⚠️ ${error}` : ''}</b></p>
