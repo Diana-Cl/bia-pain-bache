@@ -3658,7 +3658,7 @@ async function getXrayWarpConfigs (env, client) {
     xrayWarpOutbounds.forEach((outbound, index) => {
         xrayWarpConfigs.push({
             ...xrayWarpConfig,
-            remarks: client === 'nikang' ? `⚫️ Warp Pro ${index + 1} ` : `⚪️ Warp ${index + 1} `,
+            remarks: client === 'nikang' ? `⚫️ Warp Pro ${index + 1} ` : `⚫️ Warp ${index + 1} `,
             outbounds: [{...outbound, tag: 'warp'}, ...xrayWarpConfig.outbounds]
         });
     });
@@ -3666,7 +3666,7 @@ async function getXrayWarpConfigs (env, client) {
     xrayWoWOutbounds.forEach((outbound, index) => {
         if (outbound.tag.includes('warp-out')) {
             let xrayWoWConfig = structuredClone(xrayWoWConfigTemp);
-            xrayWoWConfig.remarks = client === 'nikang' ? `⚪ WoW Pro ${index/2 + 1} ` : `⚫️ WoW ${index/2 + 1} `;
+            xrayWoWConfig.remarks = client === 'nikang' ? `⚪ WoW Pro ${index/2 + 1} ` : `⚪️ WoW ${index/2 + 1} `;
             xrayWoWConfig.outbounds = [{...xrayWoWOutbounds[index]}, {...xrayWoWOutbounds[index + 1]}, ...xrayWoWConfig.outbounds];
             xrayWoWConfig.routing.rules[xrayWoWConfig.routing.rules.length - 1].outboundTag = outbound.tag;
             xrayWarpConfigs.push(xrayWoWConfig);
@@ -3903,7 +3903,7 @@ async function getClashConfig (env, hostName, isWarp) {
                     : ['🔴 Best Ping', ...outboundsRemarks ]
             },
             {
-                "name": isWarp ? `🔴 Warp Best Ping`: `🔴 Best Ping`,
+                "name": isWarp ? `★ Warp list`: `🔴 Best Ping`,
                 "type": "url-test",
                 "url": "https://www.gstatic.com/generate_204",
                 "interval": 30,
@@ -3915,7 +3915,7 @@ async function getClashConfig (env, hostName, isWarp) {
     };
 
     isWarp && config["proxy-groups"].push({
-        "name": "🔴 WoW Best Ping",
+        "name": "★ WoW list",
         "type": "url-test",
         "url": "https://www.gstatic.com/generate_204",
         "interval": 30,
