@@ -1,6 +1,6 @@
 /**
 * @ts-nocheck   <!--GAMFC-->version base on commit 43fad05dcdae3b723c53c226f8181fc5bd47223e, time is 2023-06-22 15:20:02 UTC<!--GAMFC-END-->.
-* Last Update: 4:20 UTC - Tuesday, 17 September 2024, By @Sahar-KM , @Diana-Cl & Nesa
+* Last Update: 4:20 UTC - Wednesday, 18 September 2024, By @Sahar-KM , @Diana-Cl & Nesa @nescafetor
 * Many thanks to github.com/bia-pain-bache
 */
 import { connect } from 'cloudflare:sockets';
@@ -15,10 +15,10 @@ const defaultHttpPorts = ['80', '8080', '2052', '2082', '2086', '2095', '8880'];
 const defaultHttpsPorts = ['443', '8443', '2053', '2083', '2087', '2096'];
 let proxyIP = proxyIPs[Math.floor(Math.random() * proxyIPs.length)];
 let dohURL = 'https://cloudflare-dns.com/dns-query';
-let trojanPassword = `NiREvil`;
+let trojanPassword = `REvil`;
 // https://emn178.github.io/online-tools/sha224.html
 // https://www.atatus.com/tools/sha224-to-hash
-let hashPassword = 'a824e0acad66f6fde67a3f1f8bd5c2b11c7bc2ab94eed98e2b83c712';
+let hashPassword = '6dfd0e8e67ad3230498f80938cb924bc767b7db65eb4c9545fbe4ad7';
 let panelVersion = 'v2.5.5';
 
 if (!isValidUUID(userID)) {
@@ -1112,22 +1112,22 @@ async function handleUDPOutBound(webSocket, vlessResponseHeader, log) {
 
 function generateRemark(index, port, protocol, fragType) {
     let remark = '';
-    const type = fragType ? ' Frag' : '';
+    const type = fragType ? ' ⇢F' : '';
     switch (index) {
         case 0:
         case 1:
-            remark = `${protocol}${type} ⇢ Ðoϻɑiͷ  ${index + 1} : ${port}`;
+            remark = `⇢${protocol}${type} ⇢Ðoϻɑiͷ  ${index + 1} ⇢${port}`;
             break;
         case 2:
         case 3:
-            remark = `${protocol}${type} ⇢ IPv4 ${index - 1} : ${port}`;
+            remark = `⇢${protocol}${type} ⇢IPV4 ${index - 1} ⇢${port}`;
             break;
         case 4:
         case 5:
-            remark = `${protocol}${type} ⇢ IPv6 ${index - 3} : ${port}`;
+            remark = `⇢${protocol}${type} ⇢IPV6 ${index - 3} ⇢${port}`;
             break;
         default:
-            remark = `${protocol}${type} ⇢ Clean IP ${index - 5} : ${port}`;
+            remark = `⇢${protocol}${type} ⇢CLEAN IP ${index - 5} ⇢${port}`;
             break;
     }
 
@@ -1190,8 +1190,8 @@ async function updateDataset (env, Settings) {
         trojanConfigs: Settings ? Settings.get('trojanConfigs') : currentProxySettings?.trojanConfigs || false,
         outProxy: Settings ? vlessConfig : currentProxySettings?.outProxy || '',
         outProxyParams: vlessConfig ? await extractVlessParams(vlessConfig) : currentProxySettings?.outProxyParams || '',
-        wowEndpoint: Settings ? Settings.get('wowEndpoint')?.replaceAll?.(' ', '') : currentProxySettings?.wowEndpoint || '188.114.98.1:1010,162.159.192.100:1018,162.159.192.0:955',
-        warpEndpoints: Settings ? Settings.get('warpEndpoints')?.replaceAll?.(' ', '') : currentProxySettings?.warpEndpoints || '188.114.98.1:1010,162.159.192.100:1018,162.159.192.0:955',
+        wowEndpoint: Settings ? Settings.get('wowEndpoint')?.replaceAll?.(' ', '') : currentProxySettings?.wowEndpoint || '188.114.98.1:1010,162.159.192.100:1018,162.159.192.0:955,188.114.97.170:2371,162.159.192.1:988',
+        warpEndpoints: Settings ? Settings.get('warpEndpoints')?.replaceAll?.(' ', '') : currentProxySettings?.warpEndpoints || '188.114.98.1:1010,162.159.192.100:1018,162.159.192.0:955,188.114.97.170:2371,162.159.192.1:988',
         hiddifyNoiseMode: Settings ? Settings.get('hiddifyNoiseMode') : currentProxySettings?.hiddifyNoiseMode || 'm4',
         nikaNGNoiseMode: Settings ? Settings.get('nikaNGNoiseMode') : currentProxySettings?.nikaNGNoiseMode || 'quic',
         noiseCountMin: Settings ? Settings.get('noiseCountMin') : currentProxySettings?.noiseCountMin || '10',
@@ -2626,7 +2626,7 @@ async function renderLoginPage () {
     </head>
     <body>
         <div class="container">
-            <h1>BpB Control Panel <span style="font-size: smaller;">${panelVersion}</span> 👻</h2>
+            <h1>Hiiii <span style="font-size: smaller;">${panelVersion}</span> 👻</h2>
             <div class="form-container">
                 <h2>User Login</h2>
                 <form id="loginForm">
