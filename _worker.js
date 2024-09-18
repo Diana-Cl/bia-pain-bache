@@ -2626,7 +2626,7 @@ async function renderLoginPage () {
     </head>
     <body>
         <div class="container">
-            <h1>'Hi,<br><span style="font-size: smaller;">Your Welcome to BpB</span> 👻</h1>
+            <h1>Hi 👻 <br><span style="font-size: smaller;">Your Welcome to BpB</span> </h3>
             <div class="form-container">
                 <h2>User Login</h2>
                 <form id="loginForm">
