@@ -3903,7 +3903,7 @@ async function getClashConfig (env, hostName, isWarp) {
                     : ['🔴 Best Ping', ...outboundsRemarks ]
             },
             {
-                "name": isWarp ? `★ Warp list`: `🔴 Best Ping`,
+                "name": isWarp ? `🔴 Warp Best Ping`: `🔴 Best Ping`,
                 "type": "url-test",
                 "url": "https://www.gstatic.com/generate_204",
                 "interval": 30,
