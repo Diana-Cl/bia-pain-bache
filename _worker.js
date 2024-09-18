@@ -2697,7 +2697,7 @@ function renderErrorPage (message, error, refer) {
 
     <body>
         <div id="error-container">
-            <h1>BpB Control Panel <span style="font-size: smaller;">${panelVersion}</span> 👻</h2>
+            <h1>BpB Panel <span style="font-size: smaller;">${panelVersion}</span> 👻</h2>
             <div id="error-message">
                 <h2>${message} ${refer 
                     ? 'Please try again or refer to <a href="https://github.com/NiREvil/bia-pain-bache/blob/main/README.md">documents</a>' 
@@ -2817,7 +2817,7 @@ async function buildWarpOutbounds (env, client, proxySettings, warpConfigs) {
 
         if (client === 'singbox' || client === 'hiddify') {
             let singboxOutbound = buildSingboxWarpOutbound(
-                client === 'hiddify' ? `🔴 Warp Pro ${index + 1} ` : `🟠 Warp ${index + 1} `, 
+                client === 'hiddify' ? `🟢 Warp Pro ${index + 1} ` : `⚪️ Warp ${index + 1} `, 
                 warpIPv6, 
                 privateKey, 
                 publicKey, 
@@ -2837,7 +2837,7 @@ async function buildWarpOutbounds (env, client, proxySettings, warpConfigs) {
         }
 
         if (client === 'clash') {
-            let clashOutbound = buildClashWarpOutbound(`🔴 Warp ${index + 1} `, warpIPv6, privateKey, publicKey, endpoint, reserved, '');
+            let clashOutbound = buildClashWarpOutbound(`🟢 Warp ${index + 1} `, warpIPv6, privateKey, publicKey, endpoint, reserved, '');
             warpOutbounds.push(clashOutbound);
         }
 
@@ -2896,8 +2896,8 @@ async function buildWoWOutbounds (env, client, proxySettings, warpConfigs) {
                     i === 1
                     ? `warp-ir_${index + 1}` 
                     : client === 'hiddify' 
-                        ? `🟢 WoW Pro ${index + 1}` 
-                        : `🔵 WoW ${index + 1} ` , 
+                        ? `🟡 WoW Pro ${index + 1}` 
+                        : `⚫️ WoW ${index + 1} ` , 
                     warpIPv6, 
                     privateKey, 
                     publicKey, 
@@ -2918,7 +2918,7 @@ async function buildWoWOutbounds (env, client, proxySettings, warpConfigs) {
 
             if (client === 'clash') {
                 let clashOutbound = buildClashWarpOutbound(
-                    i === 1 ? `warp-ir_${index + 1}` : `🔵 WoW ${index + 1} `, 
+                    i === 1 ? `warp-ir_${index + 1}` : `🟡 WoW ${index + 1} `, 
                     warpIPv6, 
                     privateKey, 
                     publicKey, 
@@ -3643,7 +3643,7 @@ async function getXrayWarpConfigs (env, client) {
     xrayWarpConfig.routing.rules[xrayWarpConfig.routing.rules.length - 1].outboundTag = 'warp';
     delete xrayWarpConfig.observatory;
     delete xrayWarpConfig.routing.balancers;
-    xrayWarpBestPing.remarks = client === 'nikang' ? '🔵 Warp Pro Best Ping' : '🟢 Warp Best Ping';
+    xrayWarpBestPing.remarks = client === 'nikang' ? '🔴 Warp Pro Best-Ping' : '🔴 Warp Best-Ping';
     xrayWarpBestPing.dns = await buildXrayDNSObject('1.1.1.1', localDNS, blockAds, bypassIran, bypassChina, blockPorn, false);
     xrayWarpBestPing.routing.rules = buildXrayRoutingRules(localDNS, blockAds, bypassIran, blockPorn, bypassLAN, bypassChina, blockUDP443, false, true);
     xrayWarpBestPing.outbounds.splice(0,1);
@@ -3658,7 +3658,7 @@ async function getXrayWarpConfigs (env, client) {
     xrayWarpOutbounds.forEach((outbound, index) => {
         xrayWarpConfigs.push({
             ...xrayWarpConfig,
-            remarks: client === 'nikang' ? `🔵 Warp Pro ${index + 1} ` : `🟢 Warp ${index + 1} `,
+            remarks: client === 'nikang' ? `🟢 Warp Pro ${index + 1} ` : `⚪️ Warp ${index + 1} `,
             outbounds: [{...outbound, tag: 'warp'}, ...xrayWarpConfig.outbounds]
         });
     });
@@ -3666,7 +3666,7 @@ async function getXrayWarpConfigs (env, client) {
     xrayWoWOutbounds.forEach((outbound, index) => {
         if (outbound.tag.includes('warp-out')) {
             let xrayWoWConfig = structuredClone(xrayWoWConfigTemp);
-            xrayWoWConfig.remarks = client === 'nikang' ? `🔴 WoW Pro ${index/2 + 1} ` : `🟠 WoW ${index/2 + 1} `;
+            xrayWoWConfig.remarks = client === 'nikang' ? `🟡 WoW Pro ${index/2 + 1} ` : `⚫️ WoW ${index/2 + 1} `;
             xrayWoWConfig.outbounds = [{...xrayWoWOutbounds[index]}, {...xrayWoWOutbounds[index + 1]}, ...xrayWoWConfig.outbounds];
             xrayWoWConfig.routing.rules[xrayWoWConfig.routing.rules.length - 1].outboundTag = outbound.tag;
             xrayWarpConfigs.push(xrayWoWConfig);
@@ -3674,7 +3674,7 @@ async function getXrayWarpConfigs (env, client) {
     });
 
     let xrayWoWBestPing = structuredClone(xrayWarpBestPing);
-    xrayWoWBestPing.remarks = client === 'nikang' ? '🔴 WoW Pro Best Ping' : '🟠 WoW Best Ping';
+    xrayWoWBestPing.remarks = client === 'nikang' ? '🔴 WoW Pro Best Ping' : '🔴 WoW Best Ping';
     xrayWoWBestPing.routing.balancers[0].selector = ['warp-out'];
     xrayWoWBestPing.observatory.subjectSelector = ['warp-out'];
     xrayWarpBestPing.outbounds = [...xrayWarpOutbounds, ...xrayWarpBestPing.outbounds];
@@ -3899,11 +3899,11 @@ async function getClashConfig (env, hostName, isWarp) {
                 "name": "★ Selector",
                 "type": "select",
                 "proxies": isWarp
-                    ? ['🟠 Warp Best Ping', '🔵 WoW Best Ping', ...warpOutboundsRemarks, ...wowOutboundRemarks ]
+                    ? ['🟢 Warp Best Ping', '🟡 WoW Best Ping', ...warpOutboundsRemarks, ...wowOutboundRemarks ]
                     : ['🔴 Best Ping', ...outboundsRemarks ]
             },
             {
-                "name": isWarp ? `🟠 Warp Best Ping`: `🔴 Best Ping`,
+                "name": isWarp ? `🔴 Warp Best Ping`: `🔴 Best Ping`,
                 "type": "url-test",
                 "url": "https://www.gstatic.com/generate_204",
                 "interval": 30,
