@@ -4248,15 +4248,15 @@ async function getSingboxConfig (env, hostName, client, warpType) {
         const WOWOutbounds = await buildWoWOutbounds(env, client, proxySettings, warpConfigs);
         config.dns.servers[0].address = '1.1.1.1';
         config.outbounds[0].outbounds = client === 'hiddify'
-            ? ["🔴 Warp Pro Best Ping", "🟢 WoW Pro Best Ping"]
-            : ["🟠 Warp Best Ping", "🔵 WoW Best Ping"];
+            ? ["🔴 Warp Pro Best Ping", "🔴 WoW Pro Best Ping"]
+            : ["🔴 Warp Best Ping", "🔴 WoW Best Ping"];
         config.outbounds.splice(2, 0, structuredClone(config.outbounds[1]));
         config.outbounds[1].tag = client === 'hiddify' 
             ? "🔴 Warp Pro Best Ping"
-            : "🟠 Warp Best Ping";
+            : "🔴 Warp Best Ping";
         config.outbounds[2].tag = client === 'hiddify'
-            ? "🟢 WoW Pro Best Ping"
-            : "🔵 WoW Best Ping";
+            ? "🔴 WoW Pro Best Ping"
+            : "🔴 WoW Best Ping";
         config.outbounds.push(...warpOutbounds, ...WOWOutbounds);
         warpOutbounds.forEach(outbound => {
             config.outbounds[0].outbounds.push(outbound.tag);
