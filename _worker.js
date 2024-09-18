@@ -3899,7 +3899,7 @@ async function getClashConfig (env, hostName, isWarp) {
                 "name": "★ Selector",
                 "type": "select",
                 "proxies": isWarp
-                    ? ['🟢 Warp Best Ping', '🟡 WoW Best Ping', ...warpOutboundsRemarks, ...wowOutboundRemarks ]
+                    ? ['🔴 Warp Best Ping', '🔴 WoW Best Ping', ...warpOutboundsRemarks, ...wowOutboundRemarks ]
                     : ['🔴 Best Ping', ...outboundsRemarks ]
             },
             {
@@ -3915,7 +3915,7 @@ async function getClashConfig (env, hostName, isWarp) {
     };
 
     isWarp && config["proxy-groups"].push({
-        "name": "🟡 WoW Best Ping",
+        "name": "🔴 WoW Best Ping",
         "type": "url-test",
         "url": "https://www.gstatic.com/generate_204",
         "interval": 30,
