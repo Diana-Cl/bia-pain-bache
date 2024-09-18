@@ -2894,7 +2894,7 @@ async function buildWoWOutbounds (env, client, proxySettings, warpConfigs) {
             if (client === 'singbox' || client === 'hiddify') {
                 let singboxOutbound = buildSingboxWarpOutbound(
                     i === 1
-                    ? `warp-ir_${index + 1}` 
+                    ? `🌍 Nothing_${index + 1}` 
                     : client === 'hiddify' 
                         ? `🟡 WoW Pro ${index + 1}` 
                         : `⚫️ WoW ${index + 1} ` , 
@@ -3643,7 +3643,7 @@ async function getXrayWarpConfigs (env, client) {
     xrayWarpConfig.routing.rules[xrayWarpConfig.routing.rules.length - 1].outboundTag = 'warp';
     delete xrayWarpConfig.observatory;
     delete xrayWarpConfig.routing.balancers;
-    xrayWarpBestPing.remarks = client === 'nikang' ? '🔴 Warp Pro Best-Ping' : '🔴 Warp Best-Ping';
+    xrayWarpBestPing.remarks = client === 'nikang' ? '🔴 Warp Pro Best Ping' : '🔴 Warp Best Ping';
     xrayWarpBestPing.dns = await buildXrayDNSObject('1.1.1.1', localDNS, blockAds, bypassIran, bypassChina, blockPorn, false);
     xrayWarpBestPing.routing.rules = buildXrayRoutingRules(localDNS, blockAds, bypassIran, blockPorn, bypassLAN, bypassChina, blockUDP443, false, true);
     xrayWarpBestPing.outbounds.splice(0,1);
