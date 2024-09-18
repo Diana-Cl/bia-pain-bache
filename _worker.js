@@ -2817,7 +2817,7 @@ async function buildWarpOutbounds (env, client, proxySettings, warpConfigs) {
 
         if (client === 'singbox' || client === 'hiddify') {
             let singboxOutbound = buildSingboxWarpOutbound(
-                client === 'hiddify' ? `🟢 Warp Pro ${index + 1} ` : `⚪️ Warp ${index + 1} `, 
+                client === 'hiddify' ? `⚫️ Warp Pro ${index + 1} ` : `⚪️ Warp ${index + 1} `, 
                 warpIPv6, 
                 privateKey, 
                 publicKey, 
@@ -2837,7 +2837,7 @@ async function buildWarpOutbounds (env, client, proxySettings, warpConfigs) {
         }
 
         if (client === 'clash') {
-            let clashOutbound = buildClashWarpOutbound(`🟢 Warp ${index + 1} `, warpIPv6, privateKey, publicKey, endpoint, reserved, '');
+            let clashOutbound = buildClashWarpOutbound(`⚫️ Warp ${index + 1} `, warpIPv6, privateKey, publicKey, endpoint, reserved, '');
             warpOutbounds.push(clashOutbound);
         }
 
@@ -2896,7 +2896,7 @@ async function buildWoWOutbounds (env, client, proxySettings, warpConfigs) {
                     i === 1
                     ? `⚫️ Nothing ${index + 1}` 
                     : client === 'hiddify' 
-                        ? `🟡 WoW Pro ${index + 1}` 
+                        ? `⚪ WoW Pro ${index + 1}` 
                         : `⚫️ WoW ${index + 1} ` , 
                     warpIPv6, 
                     privateKey, 
@@ -2918,13 +2918,13 @@ async function buildWoWOutbounds (env, client, proxySettings, warpConfigs) {
 
             if (client === 'clash') {
                 let clashOutbound = buildClashWarpOutbound(
-                    i === 1 ? `🌍 Nothing ${index + 1}` : `🟡 WoW ${index + 1} `, 
+                    i === 1 ? `⚫️ Nothing ${index + 1}` : `⚪ WoW ${index + 1} `, 
                     warpIPv6, 
                     privateKey, 
                     publicKey, 
                     endpoint,
                     reserved, 
-                    i === 0 ? `🌍 Nothing ${index + 1}` : ''
+                    i === 0 ? `⚫️ Nothing ${index + 1}` : ''
                 );
 
                 wowOutbounds.push(clashOutbound);
@@ -3658,7 +3658,7 @@ async function getXrayWarpConfigs (env, client) {
     xrayWarpOutbounds.forEach((outbound, index) => {
         xrayWarpConfigs.push({
             ...xrayWarpConfig,
-            remarks: client === 'nikang' ? `🟢 Warp Pro ${index + 1} ` : `⚪️ Warp ${index + 1} `,
+            remarks: client === 'nikang' ? `⚫️ Warp Pro ${index + 1} ` : `⚪️ Warp ${index + 1} `,
             outbounds: [{...outbound, tag: 'warp'}, ...xrayWarpConfig.outbounds]
         });
     });
@@ -3666,7 +3666,7 @@ async function getXrayWarpConfigs (env, client) {
     xrayWoWOutbounds.forEach((outbound, index) => {
         if (outbound.tag.includes('warp-out')) {
             let xrayWoWConfig = structuredClone(xrayWoWConfigTemp);
-            xrayWoWConfig.remarks = client === 'nikang' ? `🟡 WoW Pro ${index/2 + 1} ` : `⚫️ WoW ${index/2 + 1} `;
+            xrayWoWConfig.remarks = client === 'nikang' ? `⚪ WoW Pro ${index/2 + 1} ` : `⚫️ WoW ${index/2 + 1} `;
             xrayWoWConfig.outbounds = [{...xrayWoWOutbounds[index]}, {...xrayWoWOutbounds[index + 1]}, ...xrayWoWConfig.outbounds];
             xrayWoWConfig.routing.rules[xrayWoWConfig.routing.rules.length - 1].outboundTag = outbound.tag;
             xrayWarpConfigs.push(xrayWoWConfig);
