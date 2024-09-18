@@ -3905,7 +3905,7 @@ async function getClashConfig (env, hostName, isWarp) {
             {
                 "name": isWarp ? `🔴 Warp Best Ping`: `🔴 Best Ping`,
                 "type": "url-test",
-                "url": "https://www.gstatic.com/generate_204",
+                "url": "http://www.gstatic.com/generate_204",
                 "interval": 30,
                 "tolerance": 50,
                 "proxies": isWarp ? warpOutboundsRemarks : outboundsRemarks
@@ -3915,9 +3915,9 @@ async function getClashConfig (env, hostName, isWarp) {
     };
 
     isWarp && config["proxy-groups"].push({
-        "name": "★ WoW list",
+        "name": "🔴 WoW Best Ping",
         "type": "url-test",
-        "url": "https://www.gstatic.com/generate_204",
+        "url": "http://www.gstatic.com/generate_204",
         "interval": 30,
         "tolerance": 50,
         "proxies": wowOutboundRemarks
@@ -4501,7 +4501,7 @@ const singboxConfigTemp = {
             type: "urltest",
             tag: "🔴 Best Ping",
             outbounds: [],
-            url: "https://www.gstatic.com/generate_204",
+            url: "http://www.gstatic.com/generate_204",
             interval: "30s",
             tolerance: 50
         },
