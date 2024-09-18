@@ -2894,7 +2894,7 @@ async function buildWoWOutbounds (env, client, proxySettings, warpConfigs) {
             if (client === 'singbox' || client === 'hiddify') {
                 let singboxOutbound = buildSingboxWarpOutbound(
                     i === 1
-                    ? `🌍 Nothing_${index + 1}` 
+                    ? `🌍 Nothing ${index + 1}` 
                     : client === 'hiddify' 
                         ? `🟡 WoW Pro ${index + 1}` 
                         : `⚫️ WoW ${index + 1} ` , 
@@ -2903,7 +2903,7 @@ async function buildWoWOutbounds (env, client, proxySettings, warpConfigs) {
                     publicKey, 
                     endpoint, 
                     reserved, 
-                    i === 0 ? `warp-ir_${index + 1}` : ''
+                    i === 0 ? `🌍 Nothing ${index + 1}` : ''
                 );
                 
                 (client === 'hiddify' && i === 1) && Object.assign(singboxOutbound, {
@@ -2918,13 +2918,13 @@ async function buildWoWOutbounds (env, client, proxySettings, warpConfigs) {
 
             if (client === 'clash') {
                 let clashOutbound = buildClashWarpOutbound(
-                    i === 1 ? `warp-ir_${index + 1}` : `🟡 WoW ${index + 1} `, 
+                    i === 1 ? `🌍 Nothing ${index + 1}` : `🟡 WoW ${index + 1} `, 
                     warpIPv6, 
                     privateKey, 
                     publicKey, 
                     endpoint,
                     reserved, 
-                    i === 0 ? `warp-ir_${index + 1}` : ''
+                    i === 0 ? `🌍 Nothing ${index + 1}` : ''
                 );
 
                 wowOutbounds.push(clashOutbound);
