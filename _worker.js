@@ -1633,7 +1633,7 @@ async function renderHomePage (env, hostName, fragConfigs) {
 	</head>
 	
 	<body>
-		<h1>BpB Control Panel <span style="font-size: smaller;">${panelVersion}</span> 👻</h2>
+		<h1>BPB control panel <span style="font-size: smaller;">${panelVersion}</span> 👻</h2>
 		<div class="form-container">
             <form id="configForm">
                 <h2>VLESS & TROJAN SETTINGS <span class="material-symbols-outlined">settings</span> </h2>
@@ -1844,39 +1844,39 @@ async function renderHomePage (env, hostName, fragConfigs) {
 					<tr>
                         <td>
                             <div>
-                                <span class="material-symbols-outlined symbol">verified</span>
+                                <span class="material-symbols-outlined symbol">task_alt</span>
                                 <span>v2rayNG</span>
                             </div>
                             <div>
-                                <span class="material-symbols-outlined symbol">verified</span>
+                                <span class="material-symbols-outlined symbol">task_alt</span>
                                 <span>NikaNG</span>
                             </div>
                             <div>
-                                <span class="material-symbols-outlined symbol">verified</span>
+                                <span class="material-symbols-outlined symbol">task_alt</span>
                                 <span>MahsaNG</span>
                             </div>
                             <div>
-                                <span class="material-symbols-outlined symbol">verified</span>
+                                <span class="material-symbols-outlined symbol">task_alt</span>
                                 <span>v2rayN</span>
                             </div>
                             <div>
-                                <span class="material-symbols-outlined symbol">verified</span>
+                                <span class="material-symbols-outlined symbol">task_alt</span>
                                 <span>v2rayN-PRO</span>
                             </div>
                             <div>
-                                <span class="material-symbols-outlined symbol">verified</span>
+                                <span class="material-symbols-outlined symbol">task_alt</span>
                                 <span>Shadowrocket</span>
                             </div>
                             <div>
-                                <span class="material-symbols-outlined symbol">verified</span>
+                                <span class="material-symbols-outlined symbol">task_alt</span>
                                 <span>Streisand</span>
                             </div>
                             <div>
-                                <span class="material-symbols-outlined symbol">verified</span>
+                                <span class="material-symbols-outlined symbol">task_alt</span>
                                 <span>Hiddify</span>
                             </div>
                             <div>
-                                <span class="material-symbols-outlined symbol">verified</span>
+                                <span class="material-symbols-outlined symbol">task_alt</span>
                                 <span>Nekoray (Xray)</span>
                             </div>
                         </td>
@@ -1892,15 +1892,15 @@ async function renderHomePage (env, hostName, fragConfigs) {
 					<tr>
                         <td>
                             <div>
-                                <span class="material-symbols-outlined symbol">verified</span>
+                                <span class="material-symbols-outlined symbol">task_alt</span>
                                 <span>Nekobox</span>
                             </div>
                             <div>
-                                <span class="material-symbols-outlined symbol">verified</span>
+                                <span class="material-symbols-outlined symbol">task_alt</span>
                                 <span>Nekoray (Sing-Box)</span>
                             </div>
                             <div>
-                                <span class="material-symbols-outlined symbol">verified</span>
+                                <span class="material-symbols-outlined symbol">task_alt</span>
                                 <span>Karing</span>
                             </div>
                         </td>
@@ -1913,7 +1913,7 @@ async function renderHomePage (env, hostName, fragConfigs) {
                     <tr>
                         <td>
                             <div>
-                                <span class="material-symbols-outlined symbol">verified</span>
+                                <span class="material-symbols-outlined symbol">task_alt</span>
                                 <span>Sing-box</b></span>
                             </div>
                         </td>
@@ -1929,19 +1929,19 @@ async function renderHomePage (env, hostName, fragConfigs) {
                     <tr>
                         <td>
                             <div>
-                                <span class="material-symbols-outlined symbol">verified</span>
+                                <span class="material-symbols-outlined symbol">task_alt</span>
                                 <span>Clash Meta</span>
                             </div>
                             <div>
-                                <span class="material-symbols-outlined symbol">verified</span>
+                                <span class="material-symbols-outlined symbol">task_alt</span>
                                 <span>Clash Verge</span>
                             </div>
                             <div>
-                                <span class="material-symbols-outlined symbol">verified</span>
+                                <span class="material-symbols-outlined symbol">task_alt</span>
                                 <span>v2rayN</span>
                             </div>
                             <div>
-                                <span class="material-symbols-outlined symbol">verified</span>
+                                <span class="material-symbols-outlined symbol">task_alt</span>
                                 <span>FlClash</span>
                             </div>
                         </td>
@@ -1966,27 +1966,27 @@ async function renderHomePage (env, hostName, fragConfigs) {
                     <tr>
                         <td style="text-wrap: nowrap;">
                             <div>
-                                <span class="material-symbols-outlined symbol">verified</span>
+                                <span class="material-symbols-outlined symbol">task_alt</span>
                                 <span>v2rayNG</span>
                             </div>
                             <div>
-                                <span class="material-symbols-outlined symbol">verified</span>
+                                <span class="material-symbols-outlined symbol">task_alt</span>
                                 <span>NikaNG</span>
                             </div>
                             <div>
-                                <span class="material-symbols-outlined symbol">verified</span>
+                                <span class="material-symbols-outlined symbol">task_alt</span>
                                 <span>MahsaNG</span>
                             </div>
                             <div>
-                                <span class="material-symbols-outlined symbol">verified</span>
+                                <span class="material-symbols-outlined symbol">task_alt</span>
                                 <span>v2rayN</span>
                             </div>
                             <div>
-                                <span class="material-symbols-outlined symbol">verified</span>
+                                <span class="material-symbols-outlined symbol">task_alt</span>
                                 <span>v2rayN-PRO</span>
                             </div>
                             <div>
-                                <span class="material-symbols-outlined symbol">verified</span>
+                                <span class="material-symbols-outlined symbol">task_alt</span>
                                 <span>Streisand</span>
                             </div>
                         </td>
@@ -2011,15 +2011,15 @@ async function renderHomePage (env, hostName, fragConfigs) {
 					<tr>
                         <td>
                             <div>
-                                <span class="material-symbols-outlined symbol">verified</span>
+                                <span class="material-symbols-outlined symbol">task_alt</span>
                                 <span>v2rayNG</span>
                             </div>
                             <div>
-                                <span class="material-symbols-outlined symbol">verified</span>
+                                <span class="material-symbols-outlined symbol">task_alt</span>
                                 <span>v2rayN</span>
                             </div>
                             <div>
-                                <span class="material-symbols-outlined symbol">verified</span>
+                                <span class="material-symbols-outlined symbol">task_alt</span>
                                 <span>Streisand</span>
                             </div>
                         </td>
@@ -2035,11 +2035,11 @@ async function renderHomePage (env, hostName, fragConfigs) {
 					<tr>
                         <td>
                             <div>
-                                <span class="material-symbols-outlined symbol">verified</span>
+                                <span class="material-symbols-outlined symbol">task_alt</span>
                                 <span>Hiddify</span>
                             </div>
                             <div>
-                                <span class="material-symbols-outlined symbol">verified</span>
+                                <span class="material-symbols-outlined symbol">task_alt</span>
                                 <span>Singbox</span>
                             </div>
                         </td>
@@ -2055,19 +2055,19 @@ async function renderHomePage (env, hostName, fragConfigs) {
                     <tr>
                         <td>
                             <div>
-                                <span class="material-symbols-outlined symbol">verified</span>
+                                <span class="material-symbols-outlined symbol">task_alt</span>
                                 <span>Clash Meta</span>
                             </div>
                             <div>
-                                <span class="material-symbols-outlined symbol">verified</span>
+                                <span class="material-symbols-outlined symbol">task_alt</span>
                                 <span>Clash Verge</span>
                             </div>
                             <div>
-                                <span class="material-symbols-outlined symbol">verified</span>
+                                <span class="material-symbols-outlined symbol">task_alt</span>
                                 <span>v2rayN</span>
                             </div>
                             <div>
-                                <span class="material-symbols-outlined symbol">verified</span>
+                                <span class="material-symbols-outlined symbol">task_alt</span>
                                 <span>FlClash</span>
                             </div>
                         </td>
@@ -2092,15 +2092,15 @@ async function renderHomePage (env, hostName, fragConfigs) {
 					<tr>
                         <td>
                             <div>
-                                <span class="material-symbols-outlined symbol">verified</span>
+                                <span class="material-symbols-outlined symbol">task_alt</span>
                                 <span>NikaNG</span>
                             </div>
                             <div>
-                                <span class="material-symbols-outlined symbol">verified</span>
+                                <span class="material-symbols-outlined symbol">task_alt</span>
                                 <span>MahsaNG</span>
                             </div>
                             <div>
-                                <span class="material-symbols-outlined symbol">verified</span>
+                                <span class="material-symbols-outlined symbol">task_alt</span>
                                 <span>v2rayN-PRO</span>
                             </div>
                         </td>
@@ -2116,7 +2116,7 @@ async function renderHomePage (env, hostName, fragConfigs) {
 					<tr>
                         <td>
                             <div>
-                                <span class="material-symbols-outlined symbol">verified</span>
+                                <span class="material-symbols-outlined symbol">task_alt</span>
                                 <span>Hiddify</span>
                             </div>
                         </td>
@@ -2626,7 +2626,7 @@ async function renderLoginPage () {
     </head>
     <body>
         <div class="container">
-            <h1>Hi 👻 <br><span style="font-size: smaller;">Your Welcome to BpB</span> </h3>
+            <h1>Hi 👻 <br><span style="font-size: smaller;">Your welcome to bpb</span> </h3>
             <div class="form-container">
                 <h2>User Login</h2>
                 <form id="loginForm">
