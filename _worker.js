@@ -1652,7 +1652,7 @@ async function renderHomePage (env, hostName, fragConfigs) {
 					<input type="text" id="proxyIP" name="proxyIP" value="${proxyIP}">
 				</div>
 				<div class="form-control">
-					<label for="cleanIPs"><span class="material-symbols-outlined">experiment</span> Clean IPs</label>
+					<label for="cleanIPs"><span class="material-symbols-outlined">nest_eco_leaf</span> Clean IPs</label>
 					<input type="text" id="cleanIPs" name="cleanIPs" value="${cleanIPs.replaceAll(",", " , ")}">
 				</div>
                 <div class="form-control">
