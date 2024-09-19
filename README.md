@@ -19,14 +19,6 @@
   <img src="docs/assets/images/Panel-4.jpg">
 </p>
 
-<p align="center">
-  <img src="docs/assets/images/Panel-5.jpg">
-</p>
-
-<p align="center">
-  <img src="docs/assets/images/Panel-6.jpg">
-</p>
-
 <br><br>
 
 
