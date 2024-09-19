@@ -1652,7 +1652,7 @@ async function renderHomePage (env, hostName, fragConfigs) {
 					<input type="text" id="proxyIP" name="proxyIP" value="${proxyIP}">
 				</div>
 				<div class="form-control">
-					<label for="cleanIPs"><span class="material-symbols-outlined">123</span> Clean IPs</label>
+					<label for="cleanIPs"><span class="material-symbols-outlined">flight_takeoff</span> Clean IPs</label>
 					<input type="text" id="cleanIPs" name="cleanIPs" value="${cleanIPs.replaceAll(",", " , ")}">
 				</div>
                 <div class="form-control">
@@ -1757,7 +1757,7 @@ async function renderHomePage (env, hostName, fragConfigs) {
 				</div>
                 <h2>WARP SETTINGS <span class="material-symbols-outlined">settings</span></h2>
 				<div class="form-control">
-                    <label for="wowEndpoint"><span class="material-symbols-outlined">repartition</span> WoW Endpoints</label>
+                    <label for="wowEndpoint"><span class="material-symbols-outlined">merge_type</span> WoW Endpoints</label>
                     <input type="text" id="wowEndpoint" name="wowEndpoint" value="${wowEndpoint.replaceAll(",", " , ")}" required>
 				</div>
 				<div class="form-control">
